@@ -17,6 +17,8 @@ angular.module('myApp.controllers', ['myApp.services'])
 //    });
 //
 //  })
+    //=====================IDEAS=============================
+
     .controller('IdeaCtrl', ['$scope', 'Ideas', function ($scope, Ideas) {
         $scope.ideas = Ideas.query();
 
@@ -36,16 +38,47 @@ angular.module('myApp.controllers', ['myApp.services'])
         }
     }])
 
-    .controller('IdeaDetailCtrl', ['$scope', '$routeParams', 'Ideas', '$location', function ($scope, $routeParams, Ideas, $location) {
+    // TODO wire up update function for Idea
+    // TODO wire up add to GWG function
+    .controller('IdeaDetailCtrl', ['$scope', '$routeParams', 'Ideas', 'Gwgs', '$location', function ($scope, $routeParams, Ideas, Gwgs, $location) {
 
         $scope.idea = Ideas.get({ id: $routeParams.id });
 
+        // approve and pass to GWG
+        $scope.approve = function() {
+
+            var grant = new Gwgs({
+                title: $scope.idea.title,
+                beneficiary: $scope.idea.beneficiary,
+                amount: $scope.idea.amount
+            });
+
+            grant.$save(function() {
+
+                $scope.idea.approved = true;
+
+                Ideas.update({id: $scope.idea.id}, $scope.idea, function() {
+                    $location.url('/view2');
+                    alert($scope.idea.title + ' Has been moved to Grant Working Group for Deliberation.');
+                });
+            });
+        }
+
     }])
 
-    .controller('MyCtrl1', function ($scope) {
-    // write Ctrl here
+    //=====================GRANT WORKING GROUP=============================
 
-  })
+    .controller('GwgCtrl', ['$scope', 'Gwgs', function ($scope, Gwgs) {
+        $scope.gwgs = Gwgs.query();
+    }])
+
+    // TODO wire up update function for GWG
+    .controller('GwgDetailCtrl', ['$scope', '$routeParams', 'Gwgs', '$location', function ($scope, $routeParams, Gwgs, $location) {
+
+        $scope.idea = Gwgs.get({ id: $routeParams.id });
+
+    }])
+
     .controller('MyCtrl2', function ($scope) {
     // write Ctrl here
 

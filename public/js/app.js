@@ -11,8 +11,7 @@ angular.module('myApp', [
 config(function ($routeProvider, $locationProvider) {
   $routeProvider.
     when('/view1', {
-      templateUrl: 'partials/welcome',
-      controller: 'MyCtrl1'
+      templateUrl: 'partials/welcome'
     }).
     when('/view2', {
       templateUrl: 'partials/Idea/list',
@@ -23,7 +22,12 @@ config(function ($routeProvider, $locationProvider) {
       controller: 'IdeaDetailCtrl'
     }).
     when('/view3', {
-      templateUrl: 'partials/Gwg/gwg'
+      templateUrl: 'partials/Gwg/list',
+      controller: 'GwgCtrl'
+    }).
+    when('/view3/:id', {
+      templateUrl: 'partials/Gwg/detail',
+      controller: 'GwgDetailCtrl'
     }).
     otherwise({
       redirectTo: '/view1'

@@ -4,7 +4,7 @@ div(class='panel')
         h2
             span(class='label label-default') {{ idea.title }}
         h5 Created: {{ idea.createdAt | date }}
-        button(class='btn btn-primary', ng-show='!idea.approved') Approve
+        button(class='btn btn-primary', ng-show='!idea.approved', ng-click='approve()') Approve
 
         br
 

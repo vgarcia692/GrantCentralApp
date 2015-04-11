@@ -10,6 +10,7 @@ var express = require('express'),
   morgan = require('morgan'),
   routes = require('./routes'),
   ideas = require('./routes/ideas'),
+  gwgs = require('./routes/gwgs'),
   http = require('http'),
   path = require('path'),
   models = require('./models');
@@ -57,6 +58,7 @@ app.get('/partials/Gwg/:name', routes.gwgPartials);
 
 // JSON API
 app.use('/ideas', ideas);
+app.use('/gwgs', gwgs);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
