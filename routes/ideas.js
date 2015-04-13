@@ -36,12 +36,12 @@ router.put('/:id', function(req, res) {
     Idea.update(
         { approved: req.body.approved},
         { where: {id: req.params.id}}
-     ).then(function(idea) {
-//        res.send(idea)
-            Idea.find(req.params.id).then(function(idea) {
+     ).then(function() {
+        Idea.find(req.params.id).then(function(idea) {
                 res.send(idea);
             });
     });
 })
+
 
 module.exports = router;
