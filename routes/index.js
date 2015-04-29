@@ -1,10 +1,6 @@
 
-/*
- * GET home page.
- */
-
 exports.index = function(req, res){
-  res.render('index');
+  res.render('index', { title: 'Grant Central'});
 };
 
 exports.login = function(req,res) {
@@ -35,4 +31,6 @@ exports.gwgPartials = function (req, res) {
     var name = req.params.name;
     res.render('partials/Gwg/' + name);
 };
+
+
 

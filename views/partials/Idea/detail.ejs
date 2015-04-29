@@ -1,0 +1,20 @@
+<div class="panel">
+    <div>
+        <h2><span class="label label-default">{{idea.title}}</span></h2>
+        <h5>Created: {{ idea.createdAt | date }}</h5>
+        <button class="btn btn-primary" ng-show="!idea.approved" ng-click="approve()">Approve</button>
+
+        <br>
+
+        <h4><label class="label label-success" ng-show="idea.approved">Approved</label></h4>
+
+        <br>
+
+        <div>
+            <div class="well">
+                <h4>Beneficiary: <span class="label label-default">{{ idea.beneficiary }}</span></h4>
+                <h4>Amount: <span class="label label-default">{{ idea.amount | currency }}</span></h4>
+            </div>
+        </div>
+    </div>
+</div>

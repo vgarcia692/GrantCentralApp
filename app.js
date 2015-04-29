@@ -12,11 +12,15 @@ var express = require('express'),
   flash = require('connect-flash'),
   cookieParser = require('cookie-parser'),
   session = require('express-session'),
+  fs = require('fs');
+//  ejs = require('hbs');
 
   // Require the routes
   routes = require('./routes'),
+//  reports = require('./routes/reports');
   ideas = require('./routes/ideas'),
   gwgs = require('./routes/gwgs'),
+//  ideaReport = require('./routes/ideasReport');
 
   http = require('http'),
   path = require('path'),
@@ -33,9 +37,11 @@ var app = module.exports = express();
  */
 
 // all environments
+//hbs.registerPartial('header', fs.readFileSync(__dirname + '/views/header.hbs', 'utf8'));
+//hbs.registerPartials(__dirname + '/views/partials');
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+app.set('view engine', 'ejs');
 app.use(morgan('dev'));
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -72,11 +78,13 @@ app.get('/',  routes.index);
 app.get('/partials/:name', routes.partials);
 app.get('/partials/Idea/:name', isLoggedIn, routes.ideaPartials);
 app.get('/partials/Gwg/:name', isLoggedIn, routes.gwgPartials);
+//app.get('/ideaReportPage', reports.ideaReportPage);
 
 
 // JSON API
 app.use('/ideas', ideas);
 app.use('/gwgs', gwgs);
+//app.use('/api/ideaReport', ideaReport);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
