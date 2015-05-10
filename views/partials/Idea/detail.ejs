@@ -12,8 +12,17 @@
 
         <div>
             <div class="well">
-                <h4>Beneficiary: <span class="label label-default">{{ idea.beneficiary }}</span></h4>
-                <h4>Amount: <span class="label label-default">{{ idea.amount | currency }}</span></h4>
+                <h4>Beneficiary: <span class="label label-default">{{ idea.department }}</span></h4>
+                <h4>Sector: <span class="label label-default">{{ idea.sector }}</span></h4>
+                <h4>CrossCutting: </h4>
+                    <ul ng-repeat="s in subSectors">
+                        <li><h4><span class="label label-default">{{s.sector}}</span></h4></li>
+                    </ul>
+                <h4>Idea: <span class="label label-default">{{ idea.idea }}</span></h4>
+                <h4>Outcomes: <span class="label label-default">{{ idea.outcomes }}</span></h4>
+                <h4>Description: <span class="label label-default">{{ idea.projectDesc }}</span></h4>
+                <h4>Estimated Budget: <span class="label label-default">{{ idea.estimatedBudget | currency }}</span></h4>
+                <h4>Evaluation: <span class="label label-default">{{ idea.evaluation }}</span></h4>
             </div>
         </div>
     </div>

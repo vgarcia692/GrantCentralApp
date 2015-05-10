@@ -1,0 +1,41 @@
+<div class="panel">
+    <div>
+        <h2><span class="label label-default">{{rfp.fundingAgency}}</span></h2>
+        <h5>Created: {{ rfp.date | date }}</h5>
+        <!--<button class="btn btn-primary" ng-show="!rfp.approved" ng-click="approve()">Approve</button>-->
+
+        <br>
+
+        <h4><label class="label label-success" ng-show="rfp.approved">Approved</label></h4>
+
+        <br>
+
+        <div>
+            <div class="well">
+                <h4>Agency Program: <span class="label label-default">{{ rfp.agencyProgram }}</span></h4>
+                <h4>Due Date: <span class="label label-default">{{ rfp.dueDate | date }}</span></h4>
+                <h4>Actual Funds Available: <span class="label label-default">{{ rfp.actualFundsAvailable | currency }}</span></h4>
+                <h4>Average Award: <span class="label label-default">{{ rfp.aveAward | currency }}</span></h4>
+                <h4>Number of Awards: <span class="label label-default">{{ rfp.numOfAwards }}</span></h4>
+                <h4>Grant Period Begin Date: <span class="label label-default">{{ rfp.grantPeriodBegin | date }}</span></h4>
+                <h4>Grant Period End Date: <span class="label label-default">{{ rfp.grantPeriodEnd | date }}</span></h4>
+                <h4>Award Notification: <span class="label label-default">{{ rfp.awardNotification | date }}</span></h4>
+                <h4>Matching:
+                    <span ng-show="rfp.matching" class="label label-default">Yes</span>
+                    <span ng-show="!rfp.matching" class="label label-default">No</span>
+                </h4>
+                <h4>In Kind: <span class="label label-default">{{ rfp.inKind }}</span></h4>
+                <h4>Department Unit: <span class="label label-default">{{ rfp.deptUnit }}</span></h4>
+                <h4>Program Officer: <span class="label label-default">{{ rfp.programOfficer }}</span></h4>
+                <h4>Community Partner: <span class="label label-default">{{ rfp.commPartner }}</span></h4>
+                <h4>RFP Summary: <span class="label label-default">{{ rfp.rfpSummary }}</span></h4>
+                <h4>Eligibility Info: <span class="label label-default">{{ rfp.eligibilityInfo }}</span></h4>
+                <h4>Application Contents: <span class="label label-default">{{ rfp.appContents }}</span></h4>
+                <h4>Competitive Position: <span class="label label-default">{{ rfp.competitivePosition }}</span></h4>
+                <h4>Funding History: <span class="label label-default">{{ rfp.fundingHistory }}</span></h4>
+                <h4>Proposal Developed: <span class="label label-default">{{ rfp.proposalDeveloped }}</span></h4>
+                <h4>Government Counterpart: <span class="label label-default">{{ rfp.govCounterpart }}</span></h4>
+            </div>
+        </div>
+    </div>
+</div>

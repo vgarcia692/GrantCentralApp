@@ -1,7 +1,8 @@
 <div class="row">
-    <div class="panel col-sm-12">
+    <div class="panel col-md-12">
         <h2><span class="label label-default hidden-print"> {{ideas.length}} Total Approved Ideas</span></h2>
-        <a href="javascript:window.print()" class="btn primary large hidden-print">Print All Ideas</a>
+        <a href="javascript:window.print()" class="btn primary large hidden-print col-md-1">Print All Ideas</a>
+        <a href="/addIdea" class="btn primary large hidden-print col-md-offset-10 col-md-1">Add New Idea</a>
         <br>
 
         <div class="col-md-12">
@@ -10,17 +11,13 @@
                 <thead>
                 <th>#</th>
                 <th>Title</th>
-                <th>Amount</th>
-                <th>Beneficiary</th>
                 <th>Approved</th>
-                <th>Approved Date</th>
+                <th>Created Date</th>
                 </thead>
                 <tbody>
                 <tr ng-repeat="idea in ideas | filter: search">
                     <td>{{ $index + 1 }}</td>
                     <td><a href="/view2/{{idea.id}}">{{ idea.title }}</a></td>
-                    <td>{{ idea.amount | currency }}</td>
-                    <td>{{ idea.beneficiary }}</td>
                     <td>
                         <h4><span ng-show="idea.approved" class="label label-success">Approved</span></h4>
                         <h4><span ng-show="!idea.approved" class="label label-danger">Disapproved</span></h4>

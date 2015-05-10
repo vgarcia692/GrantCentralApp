@@ -32,5 +32,10 @@ exports.gwgPartials = function (req, res) {
     res.render('partials/Gwg/' + name);
 };
 
+exports.rfpPartials = function (req, res) {
+    var name = req.params.name;
+    res.render('partials/Rfp/' + name);
+};
+
 
 

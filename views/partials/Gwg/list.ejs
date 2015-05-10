@@ -9,8 +9,6 @@
             <thead>
                 <th>#</th>
                 <th>Title</th>
-                <th>Amount</th>
-                <th>Beneficiary</th>
                 <th>Approved Date</th>
             </thead>
             <tbody>
@@ -19,8 +17,6 @@
                     <td>
                         <a href="/view3/{{gwg.id}}">{{gwg.title}}</a>
                     </td>
-                    <td>{{ gwg.amount | currency }}</td>
-                    <td>{{ gwg.beneficiary }}</td>
                     <td>{{ gwg.approvedAt  | date }}</td>
                 </tr>
             </tbody>

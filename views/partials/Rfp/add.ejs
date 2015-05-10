@@ -1,0 +1,143 @@
+<div class="row">
+    <div class="panel col-md-12">
+        <h2><span class="label label-default hidden-print">Add New RFP</span></h2>
+
+        <br>
+
+        <div class="col-md-12">
+            <form class="form-horizontal">
+                <div class="form-group">
+                    <label  for="fundingAgency" class="col-md-2 control-label">Funding Agency</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" id="fundingAgency" placeholder="Funding Agency" ng-model="newRfp.fundingAgency"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="agencyProgram" class="col-md-2 control-label">Agency Program</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" id="agencyProgram" placeholder="Agency Program" ng-model="newRfp.agencyProgram"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="dueDate" class="col-md-2 control-label">Due Date</label>
+                    <div class="col-md-10">
+                        <input type="date" class="form-control" id="dueDate" placeholder="Due Date" ng-model="newRfp.dueDate"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="actualFundsAvailable" class="col-md-2 control-label">Actual Funds Available</label>
+                    <div class="col-md-10">
+                        <input type="number" class="form-control" id="actualFundsAvailable" ng-model="newRfp.actualFundsAvailable"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="aveAward" class="col-md-2 control-label">Average Award</label>
+                    <div class="col-md-10">
+                        <input type="number" class="form-control" id="aveAward" ng-model="newRfp.aveAward"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="numOfAwards" class="col-md-2 control-label">Number of Awards</label>
+                    <div class="col-md-10">
+                        <input type="number" class="form-control" id="numOfAwards" ng-model="newRfp.numOfAwards"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="grantPeriod" class="col-md-2 control-label">Grant Period</label>
+                    <div class="col-md-10">
+                        Begin: <input type="date" class="form-control" id="grantPeriod" ng-model="newRfp.grantPeriodBegin"/>
+                        End: <input type="date" class="form-control" id="grantPeriod" ng-model="newRfp.grantPeriodEnd"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="awardNotification" class="col-md-2 control-label">Award Notification</label>
+                    <div class="col-md-10">
+                        <input type="date" class="form-control" id="awardNotification" ng-model="newRfp.awardNotification"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="matching" class="col-md-2 control-label">Matching</label>
+                    <div class="col-md-10">
+                        <input type="checkbox" class="form-control" id="matching" ng-model="newRfp.matching"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="inKind" class="col-md-2 control-label">inKind</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" id="inKind" ng-model="newRfp.inKind"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="deptUnit" class="col-md-2 control-label">Department/Unit</label>
+                    <div class="col-md-10">
+                        <select class="form-control" id="deptUnit" ng-model="newRfp.deptUnit">
+                            <option>STEM</option>
+                            <option>Student Services</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="programOfficer" class="col-md-2 control-label">Program Officer</label>
+                    <div class="col-md-10">
+                        <input type="text" class="form-control" id="programOfficer" ng-model="newRfp.programOfficer"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="commPartner" class="col-md-2 control-label">Community Partners</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" id="commPartner" ng-model="newRfp.commPartner"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="rfpSummary" class="col-md-2 control-label">RFP Summary</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" id="rfpSummary" ng-model="newRfp.rfpSummary"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="eligibilityInfo" class="col-md-2 control-label">Eligibility Information</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" id="eligibilityInfo" ng-model="newRfp.eligibilityInfo"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="appContents" class="col-md-2 control-label">Application Contents</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" id="appContents" ng-model="newRfp.appContents"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="competitivePosition" class="col-md-2 control-label">Competitive Postion</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" id="competitivePosition" ng-model="newRfp.competitivePosition"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="fundingHistory" class="col-md-2 control-label">Funding History</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" id="fundingHistory" ng-model="newRfp.fundingHistory"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="proposalDeveloped" class="col-md-2 control-label">Proposal Developed</label>
+                    <div class="col-md-10">
+                        <textarea class="form-control" id="proposalDeveloped" ng-model="newRfp.proposalDeveloped"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  for="govCounterpart" class="col-md-2 control-label">Government Counterpart</label>
+                    <div class="col-md-10">
+                        <select class="form-control" id="govCounterpart" ng-model="newRfp.govCounterpart">
+                            <option>Ministry of Education</option>
+                            <option>Ministry of Health</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <button class="btn btn-primary" type="submit" ng-click="save()">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

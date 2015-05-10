@@ -8,13 +8,19 @@
 angular.module('myApp.services', ['ngResource'])
 
     .factory('Ideas', ['$resource', function($resource){
-        return $resource('/ideas/:id', null, { // pull url from server
+        return $resource('/api/ideas/:id', null, { // pull url from server
             'update': { method:'PUT' }
         });
     }])
 
     .factory('Gwgs', ['$resource', function($resource){
-        return $resource('/gwgs/:id', null, { // pull url from server
+        return $resource('/api/gwgs/:id', {id: '@id'}, { // pull url from server
             'update': { method:'PUT' }
+        });
+    }])
+
+    .factory('Rfps', ['$resource', function($resource){
+        return $resource('/api/rfps/:id', {id: '@id'}, {
+            'update': {method: 'PUT'}
         });
     }])

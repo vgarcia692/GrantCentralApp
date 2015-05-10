@@ -3,43 +3,59 @@
 // */
 var bodyParser = require('body-parser');
 var express = require('express');
-var models = require('../models');
+var m = require('../models');
 var router = express.Router();
-var Idea = models.Idea;
+//var Idea = models.Idea;
 
 router.get('/', function(req, res) {
-    Idea.findAll().then(function(ideas) {
-        res.send(ideas);
-    })
+    m.Idea
+        .findAll({attributes: ['id', 'title', 'approved', 'createdAt']})
+        .then(function(ideas) {
+            res.send(ideas);
+        });
 });
 
 router.post('/', function(req, res) {
+
+    var subSector = req.body.subSector;
     var newIdea = {
         title: req.body.title,
-        beneficiary: req.body.beneficiary,
-        amount: req.body.amount
+        approved: req.body.approved,
+        department: req.body.department,
+        sector: req.body.sector,
+        idea: req.body.idea,
+        outcomes: req.body.outcomes,
+        projectDesc: req.body.projectDesc,
+        estimatedBudget: req.body.estimatedBudget,
+        evaluation: req.body.evaluation
     }
 
-    Idea.create(newIdea).then(function (idea) {
-        res.send(idea); // get idea from db not the newIdea
+    m.Idea.create(newIdea)
+        .then(function (idea) {
+        idea.addSubSectors(subSector);
+        res.send(200);
     });
 
 });
 
 router.get('/:id', function(req, res) {
-    Idea.find(req.params.id).then(function(idea) {
-        res.send(idea);
+    m.Idea.find(
+        {
+            where: {id: req.params.id},
+            include: [{ model: m.SubSector }]
+        })
+        .then(function(idea) {
+        console.log(JSON.stringify(idea));
+        res.send(JSON.stringify(idea));
     });
 });
 
 router.put('/:id', function(req, res) {
-    Idea.update(
+    m.Idea.update(
         { approved: req.body.approved},
         { where: {id: req.params.id}}
      ).then(function() {
-        Idea.find(req.params.id).then(function(idea) {
-                res.send(idea);
-            });
+        res.send(200);
     });
 })
 

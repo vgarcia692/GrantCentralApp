@@ -1,0 +1,98 @@
+<div class="panel">
+    <div>
+        <h2><span class="label label-default">{{gwg.title}}</span></h2>
+        <h5>Approved: {{ gwg.approvedAt | date }}</h5>
+
+        <br>
+
+        <div>
+            <div class="well">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label  for="title" class="col-md-2 control-label">Title</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="title" placeholder="Title" ng-model="gwg.title">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  for="projDir" class="col-md-2 control-label">Project Director</label>
+                        <div class="col-md-10">
+                            <input type="text" id="projDir" placeholder="Project Director" ng-model="gwg.projectDirector"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  for="stratPlan" class="col-md-2 control-label">Strategic Plan</label>
+                        <div class="col-md-10">
+                            <select class="form-control" id="stratPlan" ng-model="gwg.stratPlan">
+                                <option>To Be Determined</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  for="govCounterpart" class="col-md-2 control-label">Government Counterpart</label>
+                        <div class="col-md-10">
+                            <select class="form-control" id="govCounterpart" ng-model="gwg.govCounterpart">
+                                <option>Ministry of Education</option>
+                                <option>Ministry of Health</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  for="vp" class="col-md-2 control-label">Vice President</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="vp" ng-model="gwg.vp">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  for="dean" class="col-md-2 control-label">Dean</label>
+                        <div class="col-md-10">
+                            <input id="dean" class="form-control" ng-model="gwg.dean" type="text">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  for="coreIdea" class="col-md-2 control-label">Core Idea</label>
+                        <div class="col-md-10">
+                            <textarea type="text" class="form-control" id="coreIdea" ng-model="gwg.coreIdea"
+                                      placeholder="What are you responding to?"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  for="goalsAndObj" class="col-md-2 control-label">Goals and Objectives</label>
+                        <div class="col-md-10">
+                            <textarea type="text" class="form-control" id="goalsandobj" ng-model="gwg.goalsAndObj"
+                                      placeholder="Expected Outcomes of the Idea?"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  for="supportingEvi" class="col-md-2 control-label">Supporting Evidence</label>
+                        <div class="col-md-10">
+                            <textarea type="text" class="form-control" id="supportingEvi" ng-model="gwg.supportingEvi"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  for="projectDesc" class="col-md-2 control-label">Project Description</label>
+                        <div class="col-md-10">
+                            <textarea type="text" class="form-control" id="projectDesc" ng-model="gwg.projectDesc"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  for="estBudget" class="col-md-2 control-label">Estimated Budget</label>
+                        <div class="col-md-10">
+                            <input id="estBudget" type="number" ng-model="gwg.estBudget" placeholder="Estimated Budget"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  for="evaluation" class="col-md-2 control-label">Evaluation</label>
+                        <div class="col-md-10">
+                            <textarea type="text" class="form-control" id="evaluation" ng-model="gwg.evaluation"
+                                      placeholder="How will you know when and to what extent you have succeeded?"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary" type="submit" ng-click="save()">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

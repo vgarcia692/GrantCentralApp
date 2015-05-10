@@ -21,6 +21,10 @@ config(function ($routeProvider, $locationProvider) {
       templateUrl: 'partials/Idea/detail',
       controller: 'IdeaDetailCtrl'
     }).
+    when('/addIdea', {
+       templateUrl: 'partials/Idea/add',
+       controller: 'IdeaCtrl'
+    }).
     when('/view3', {
       templateUrl: 'partials/Gwg/list',
       controller: 'GwgCtrl'
@@ -28,6 +32,18 @@ config(function ($routeProvider, $locationProvider) {
     when('/view3/:id', {
       templateUrl: 'partials/Gwg/detail',
       controller: 'GwgDetailCtrl'
+    }).
+    when('/view4', {
+        templateUrl: 'partials/Rfp/list',
+        controller: 'RfpCtrl'
+    }).
+    when('/addRfp', {
+          templateUrl: 'partials/Rfp/add',
+          controller: 'RfpCtrl'
+    }).
+    when('/view4/:id', {
+          templateUrl: 'partials/Rfp/detail',
+          controller: 'RfpDetailCtrl'
     }).
     otherwise({
       redirectTo: '/view1'

@@ -13,6 +13,7 @@ var express = require('express'),
   cookieParser = require('cookie-parser'),
   session = require('express-session'),
   fs = require('fs');
+  models = require(__dirname + '/models');
 //  ejs = require('hbs');
 
   // Require the routes
@@ -20,6 +21,7 @@ var express = require('express'),
 //  reports = require('./routes/reports');
   ideas = require('./routes/ideas'),
   gwgs = require('./routes/gwgs'),
+  rfps = require('./routes/rfps'),
 //  ideaReport = require('./routes/ideasReport');
 
   http = require('http'),
@@ -78,12 +80,13 @@ app.get('/',  routes.index);
 app.get('/partials/:name', routes.partials);
 app.get('/partials/Idea/:name', isLoggedIn, routes.ideaPartials);
 app.get('/partials/Gwg/:name', isLoggedIn, routes.gwgPartials);
-//app.get('/ideaReportPage', reports.ideaReportPage);
+app.get('/partials/Rfp/:name', routes.rfpPartials);
 
 
 // JSON API
-app.use('/ideas', ideas);
-app.use('/gwgs', gwgs);
+app.use('/api/ideas', ideas);
+app.use('/api/gwgs', gwgs);
+app.use('/api/rfps', rfps);
 //app.use('/api/ideaReport', ideaReport);
 
 // redirect all others to the index (HTML5 history)

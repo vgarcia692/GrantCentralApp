@@ -1,0 +1,31 @@
+<div class="row">
+    <div class="panel col-sm-12">
+        <h2><span class="label label-default hidden-print"> {{rfps.length}} Total RFP</span></h2>
+        <a href="javascript:window.print()" class="btn primary large hidden-print col-md-1">Print All RFP</a>
+        <a href="/addRfp" class="btn primary large hidden-print col-md-offset-10 col-md-1">Add New RFP</a>
+        <br>
+
+        <div class="col-md-12">
+            <label class="hidden-print">Search: </label> <input class="hidden-print" type="text" ng-model="search.title" class="no-print"/>
+            <table class="table table-hover col-sm-12">
+                <thead>
+                <th>#</th>
+                <th>Title</th>
+                <th>Approved</th>
+                <th>Created Date</th>
+                </thead>
+                <tbody>
+                <tr ng-repeat="rfp in rfps | filter: search">
+                    <td>{{ $index + 1 }}</td>
+                    <td><a href="/view4/{{rfp.id}}">{{ rfp.fundingAgency }}</a></td>
+                    <td>
+                        <h4><span ng-show="rfp.approved" class="label label-success">Approved</span></h4>
+                        <h4><span ng-show="!rfp.approved" class="label label-danger">Disapproved</span></h4>
+                    </td>
+                    <td>{{ rfp.date | date }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
