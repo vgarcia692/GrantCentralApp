@@ -87,7 +87,6 @@ app.get('/partials/Rfp/:name', routes.rfpPartials);
 app.use('/api/ideas', ideas);
 app.use('/api/gwgs', gwgs);
 app.use('/api/rfps', rfps);
-//app.use('/api/ideaReport', ideaReport);
 
 // redirect all others to the index (HTML5 history)
 app.get('*', routes.index);
