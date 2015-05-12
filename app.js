@@ -80,7 +80,7 @@ app.get('/',  routes.index);
 app.get('/partials/:name', routes.partials);
 app.get('/partials/Idea/:name', isLoggedIn, routes.ideaPartials);
 app.get('/partials/Gwg/:name', isLoggedIn, routes.gwgPartials);
-app.get('/partials/Rfp/:name', routes.rfpPartials);
+app.get('/partials/Rfp/:name', isLoggedIn, routes.rfpPartials);
 
 
 // JSON API
