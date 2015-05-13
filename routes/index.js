@@ -37,5 +37,13 @@ exports.rfpPartials = function (req, res) {
     res.render('partials/Rfp/' + name);
 };
 
+exports.addIdea = function(req, res) {
+    res.render('add', { title: 'Grant Central'});
+}
+
+exports.success = function(req, res) {
+    res.render('success', { title: 'Grant Central'});
+}
+
 
 

@@ -22,7 +22,7 @@ config(function ($routeProvider, $locationProvider) {
       controller: 'IdeaDetailCtrl'
     }).
     when('/addIdea', {
-       templateUrl: 'partials/Idea/add',
+       templateUrl: '/add',
        controller: 'IdeaCtrl'
     }).
     when('/view3', {
@@ -44,6 +44,9 @@ config(function ($routeProvider, $locationProvider) {
     when('/view4/:id', {
           templateUrl: 'partials/Rfp/detail',
           controller: 'RfpDetailCtrl'
+    }).
+    when('/success', {
+          templateUrl: '/success'
     }).
     otherwise({
       redirectTo: '/view1'

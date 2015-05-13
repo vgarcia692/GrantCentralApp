@@ -3,24 +3,9 @@
 /* Controllers */
 
 angular.module('myApp.controllers', ['myApp.services'])
-//    .controller('AppCtrl', function ($scope, $http) {
-//
-//    $http({
-//      method: 'GET',
-//      url: '/api/name'
-//    }).
-//    success(function (data, status, headers, config) {
-//      $scope.name = data.name;
-//    }).
-//    error(function (data, status, headers, config) {
-//      $scope.name = 'Error!';
-//    });
-//
-//  })
     //=====================IDEAS=============================
 
     .controller('IdeaCtrl', ['$scope', 'Ideas', '$location', function ($scope, Ideas, $location) {
-
         // Create the options for SubSector Multiple Select
         $scope.options = [
             { name: "Agriculture", value: "1" },
@@ -60,7 +45,7 @@ angular.module('myApp.controllers', ['myApp.services'])
 
             newIdea.$save(function(dbidea){
                 $scope.ideas.push(dbidea); // get idea from db response
-                $location.url('/view2');
+                $location.url('/success');
             });
         }
     }])

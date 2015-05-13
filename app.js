@@ -81,6 +81,8 @@ app.get('/partials/:name', routes.partials);
 app.get('/partials/Idea/:name', isLoggedIn, routes.ideaPartials);
 app.get('/partials/Gwg/:name', isLoggedIn, routes.gwgPartials);
 app.get('/partials/Rfp/:name', isLoggedIn, routes.rfpPartials);
+app.get('/add', routes.addIdea);
+app.get('/success', routes.success);
 
 
 // JSON API
