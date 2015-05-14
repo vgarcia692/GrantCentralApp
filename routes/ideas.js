@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var express = require('express');
 var m = require('../models');
 var router = express.Router();
-//var Idea = models.Idea;
+var nodemailer = require('nodemailer');
 
 router.get('/', function(req, res) {
     m.Idea
@@ -33,6 +33,31 @@ router.post('/', function(req, res) {
     m.Idea.create(newIdea)
         .then(function (idea) {
         idea.addSubSectors(subSector);
+
+            var smtpTransport = nodemailer.createTransport("SMTP",{
+                service: "Gmail",
+                auth: {
+                        user: "vgarcia@cmi.edu",
+                        pass: "Garcicmi218"
+                    }
+            });
+
+            var mailOptions = {
+                from: "vgarcia@cmi.edu",
+                to: "vgarcia@cmi.edu",
+                subject: "New Idea Posted At Grant Central Application!",
+                text: "A new Idea has been posted with the title of: " + newIdea.title
+            }
+
+            smtpTransport.sendMail(mailOptions, function(error, response){
+                if(error){
+                    console.log(error);
+                }else{
+                    console.log("Message sent: " + response.message);
+                }
+                smtpTransport.close();
+            });
+
         res.send(200);
     });
 
