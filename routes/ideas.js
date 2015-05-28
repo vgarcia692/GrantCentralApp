@@ -19,6 +19,7 @@ router.post('/', function(req, res) {
 
     var subSector = req.body.subSector;
     var newIdea = {
+        email: req.body.email,
         title: req.body.title,
         approved: req.body.approved,
         department: req.body.department,
@@ -46,7 +47,7 @@ router.post('/', function(req, res) {
                 from: "vgarcia@cmi.edu",
                 to: "vgarcia@cmi.edu",
                 subject: "New Idea Posted At Grant Central Application!",
-                text: "A new Idea has been posted with the title of: " + newIdea.title
+                text: "A new Idea has been posted with the title of: " + newIdea.title + " from " + newIdea.email
             }
 
             smtpTransport.sendMail(mailOptions, function(error, response){

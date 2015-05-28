@@ -11,7 +11,8 @@ module.exports = function(sequelize) {
     outcomes: Sequelize.TEXT,
     projectDesc: Sequelize.TEXT,
     estimatedBudget: Sequelize.INTEGER,
-    evaluation: Sequelize.TEXT
+    evaluation: Sequelize.TEXT,
+    email: Sequelize.STRING(50)
   }, {
     timestamps: true,
     updatedAt: false,

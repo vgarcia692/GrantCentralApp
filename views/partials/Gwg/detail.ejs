@@ -2,6 +2,7 @@
     <div>
         <h2><span class="label label-default">{{gwg.title}}</span></h2>
         <h5>Approved: {{ gwg.approvedAt | date }}</h5>
+        <h5>Google Site: <span><a href="{{gwg.documentLink}}">{{gwg.documentLink}}</a></span></h5>
 
         <br>
 
@@ -86,6 +87,12 @@
                         <div class="col-md-10">
                             <textarea type="text" class="form-control" id="evaluation" ng-model="gwg.evaluation"
                                       placeholder="How will you know when and to what extent you have succeeded?"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  for="docLink" class="col-md-2 control-label">Google Site Link</label>
+                        <div class="col-md-10">
+                            <input class="form-control" type="text" ng-model="gwg.documentLink" id="docLInk" placeholder="Enter Google Site Link"/>
                         </div>
                     </div>
                     <div class="form-group">

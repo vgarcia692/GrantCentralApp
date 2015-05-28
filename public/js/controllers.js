@@ -40,7 +40,8 @@ angular.module('myApp.controllers', ['myApp.services'])
                 outcomes: $scope.newIdea.outcomes,
                 projectDesc: $scope.newIdea.projectDesc,
                 estimatedBudget: $scope.newIdea.estimatedBudget,
-                evaluation: $scope.newIdea.evaluation
+                evaluation: $scope.newIdea.evaluation,
+                email: $scope.newIdea.email
             });
 
             newIdea.$save(function(dbidea){
@@ -111,6 +112,7 @@ angular.module('myApp.controllers', ['myApp.services'])
                 dbGwg.projectDesc = $scope.gwg.projectDesc;
                 dbGwg.estBudget = $scope.gwg.estBudget;
                 dbGwg.evaluation = $scope.gwg.evaluation;
+                dbGwg.documentLink = $scope.gwg.documentLink;
 
                 dbGwg.$update();
                 alert('Grant Updated.');

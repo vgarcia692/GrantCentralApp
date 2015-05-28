@@ -14,6 +14,7 @@ module.exports = function(sequelize) {
     projectDesc: Sequelize.TEXT,
     estBudget: Sequelize.INTEGER,
     evaluation: Sequelize.TEXT,
+    documentLink: Sequelize.STRING(100),
     approvedAt: { type: Sequelize.DATEONLY, defaultValue: Sequelize.NOW}
   }, {
     timestamps: false,

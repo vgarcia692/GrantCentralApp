@@ -48,7 +48,8 @@ router.put('/:id', function(req, res) {
             supportingEvi: req.body.supportingEvi,
             projectDesc: req.body.projectDesc,
             estBudget: req.body.estBudget,
-            evaluation: req.body.evaluation
+            evaluation: req.body.evaluation,
+            documentLink: req.body.documentLink
         },
         { where: {id: req.params.id}})
         .then(function() {
