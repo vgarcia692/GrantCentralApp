@@ -44,9 +44,9 @@ router.post('/', function(req, res) {
             });
 
             var mailOptions = {
-                from: "vgarcia@cmi.edu",
-                to: "vgarcia@cmi.edu",
-                subject: "New Idea Posted At Grant Central Application!",
+                from: "bdeemer@cmi.edu",
+                to: "bdeemer@cmi.edu",
+                subject: "New Grant Idea Posted At Grant Central Application!",
                 text: "A new Idea has been posted with the title of: " + newIdea.title + " from " + newIdea.email
             }
 
